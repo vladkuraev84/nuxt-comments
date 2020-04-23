@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <Comments />
-  </div>
+  <Comments />
 </template>
 
 <script>

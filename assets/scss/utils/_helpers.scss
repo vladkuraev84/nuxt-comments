@@ -33,7 +33,7 @@ img {
 .container {
     width: $wide;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 20px;
 
     @include respond-to(tablet) {
         width: $small;
@@ -41,7 +41,6 @@ img {
 
     @include respond-to(phone) {
         width: 100%;
-        padding: 0 10px;
     }
 
 }
