@@ -10,10 +10,6 @@ html {
   min-height: 100vh;
   font-size: 20px;
 
- /*   @include respond-to(tablet) {
-      font-size: 20px;
-    }*/
-
     @include respond-to(phone) {
       font-size: 16px;
     }
@@ -31,29 +27,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-     /* @include respond-to(phone) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 100%;
-        width: 100%;
-      }*/
 }
 
 .container {
-    width: $wide;
-    margin: 0 auto;
+  width: 100%;
+  max-width: $wide;
+  margin: 0 auto;
 
-    @include respond-to(tablet) {
-        width: $small;
-    }
+  @include respond-to(tablet) {
+      width: $small;
+  }
 
-    @include respond-to(tablet-small) {
-        width: 100%;
-    }
+  @include respond-to(tablet-small) {
+      width: 100%;
+  }
 
 }
 
@@ -65,21 +52,21 @@ a {
 
 button, a {
 
-    @media only screen and (min-width: 768px) {
-        -webkit-transition: .35s;
-        -moz-transition: .35s;
-        -ms-transition: .35s;
-        -o-transition: .35s;
-        transition: .35s;
+  @media only screen and (min-width: 768px) {
+    -webkit-transition: .35s;
+    -moz-transition: .35s;
+    -ms-transition: .35s;
+    -o-transition: .35s;
+    transition: .35s;
 
-        &:after, &:before {
-            -webkit-transition: .35s;
-            -moz-transition: .35s;
-            -ms-transition: .35s;
-            -o-transition: .35s;
-            transition: .35s;
-        }
+    &:after, &:before {
+      -webkit-transition: .35s;
+      -moz-transition: .35s;
+      -ms-transition: .35s;
+      -o-transition: .35s;
+      transition: .35s;
     }
+  }
 
   &:focus {
     outline: none;
@@ -117,14 +104,14 @@ b, strong {
 
 
 select, input, textarea {
-    border: none;
-    outline: none;
-    width: 100%;
+  border: none;
+  outline: none;
+  width: 100%;
 
-        &:active, &:focus, &:visited {
-            border: none;
-            outline: none;
-        }
+    &:active, &:focus, &:visited {
+      border: none;
+      outline: none;
+    }
 }
 
 
