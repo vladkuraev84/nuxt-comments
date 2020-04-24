@@ -1,39 +1,36 @@
 <template>
   <li class="comments__item">
     <div class="comment__header">
-      <h4 class="comment__name"><b>{{ item.name ? item.name : 'Лилия Семеновна' }}</b></h4>
-      <span class="comment__date">{{ item.dateItem ? item.dateItem : item.dateItem || formatDate }}</span>
+      <h4 class="comment__name"><b>{{ name }}</b></h4>
+      <span class="comment__date">{{ dateMoment }}</span>
     </div>
     <div class="comment__txt">
-      <p>{{ item.comment }}</p>
+      <p>{{ comment }}</p>
     </div>
   </li>
 </template>
 
 <script>
-  import moment from 'moment'
-
-  export default {
-    props: ['item'],
-    data: () => ({
-      myDate1: new Date(),
-    }),
-    filters: {
-      formatDate: value => {
-        if (value) {
-          return moment(String(value)).format('DD MMMM YYYY')
-        }
-      },
+export default {
+  props: {
+    name: {
+      type: String,
+      default: 'Лилия'
+    },
+    comment: {
+      type: String,
+      default: ''
+    },
+    dateItem: {
+      type: Date,
+      default: () => new Date()
+    }
+  },
+  computed: {
+    dateMoment() {
+      return this.$moment(this.dateItem).format('DD MMMM YYYY')
     }
   }
+}
 </script>
 
-<!--
-formatDate: d => [
-        [
-          `0${d.getDate()}`.slice(-2),
-          `${d.toLocaleString('default', { month: 'long' })}`,
-          d.getFullYear(),
-        ].join(' '),
-      ].join(' '),
--->

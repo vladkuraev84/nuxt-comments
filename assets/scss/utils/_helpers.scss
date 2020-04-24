@@ -97,9 +97,6 @@ b, strong {
   text-transform: initial;
   line-height: .75rem;
   font-weight: normal;
-
-    @include respond-to(phone) {
-    }
 }
 
 

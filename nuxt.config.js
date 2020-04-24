@@ -1,6 +1,6 @@
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -23,12 +23,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@/assets/main.scss'
+    // '@/assets/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+
   ],
   /*
   ** Nuxt.js dev-modules
@@ -39,15 +40,33 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ["@nuxtjs/moment", {locales: ["en-gb", "ru"], defaultLocale: "en-gb"}],
   ],
   /*
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+    /*analyze: {
+      analyzerMode: "server",
+      analyzerHost: "0.0.0.0",
+      analyzerPort: "8888",
+      openAnalyzer: true
+    },*/
+    extend(config, ctx) {
+      config.resolve.alias["vue"] = "vue/dist/vue.common";
+
+      config.module.rules.push({
+        enforce: "pre",
+
+        test: /.scss/,
+        use: [
+          // 'vue-style-loader',
+          // 'css-loader',
+          // 'sass-loader'
+        ],
+
+        exclude: /(node_modules)/
+      });
     }
   }
 }
