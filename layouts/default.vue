@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+  <nuxt />
 </template>
 
-<style lang="scss">
+<!--<style lang="scss">
   @import "~/assets/main.scss";
-</style>
+</style>-->
