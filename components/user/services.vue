@@ -8,28 +8,38 @@
             <span class="fill bg-green" style="width: 80%;"></span>
             <p>Ручное бронирование</p>
           </div>
-          <span class="number"><b>11</b></span>
+          <span class="number"><b>{{ numHand }}</b></span>
         </li>
         <li class="services__item">
           <div class="services__item__inner">
             <span class="fill bg-blue-light" style="width: 13%;"></span>
             <p>Пакетные туры</p>
           </div>
-          <span class="number"><b>3</b></span>
+          <span class="number"><b>{{ numPac }}</b></span>
         </li>
         <li class="services__item">
           <div class="services__item__inner">
             <span class="fill bg-blue-light" style="width: 5%;"></span>
             <p>Отели</p>
           </div>
-          <span class="number"><b>1</b></span>
+          <span class="number"><b>{{ numHotel }}</b></span>
         </li>
       </ul>
     </div>
 
     <div class="services__total">
       <span><b>Всего</b></span>
-      <span><b>15</b></span>
+      <span><b>{{ numHand + numPac + numHotel }}</b></span>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+      data: () => ({
+          numHand: 11,
+          numPac: 3,
+          numHotel: 1
+      })
+  }
+</script>

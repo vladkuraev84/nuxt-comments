@@ -17,7 +17,7 @@
         <ul>
           <Item
             v-for="item in items"
-            :key="item"
+            :key="item.id"
             :item="item"
           />
         </ul>
@@ -25,11 +25,14 @@
     </div>
     <div class="comment__form">
       <div class="container">
-        <form @submit.prevent="addNewTodo">
-          <!--<input
-            v-model.trim="newTodoText"
-            placeholder="Например"
-          >-->
+<!--        <form @submit.prevent="addNewTodo">-->
+          <!--<div class="input">
+            <input
+              v-model.trim="newTodoText"
+              placeholder="Например"
+            >
+          </div>-->
+
           <div class="input">
             <div
               class="textarea"
@@ -40,9 +43,9 @@
             />
           </div>
           <div class="text-center">
-            <button class="btn btn--yellow">Написать консультанту</button>
+            <button class="btn btn--yellow" @click="addNewTodo">Написать консультанту</button>
           </div>
-        </form>
+<!--        </form>-->
       </div>
     </div>
   </div>
@@ -63,19 +66,24 @@
         {id: 2, name: "Лилия Семеновна", comment: "Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент, это и есть всемирно известный центр огранки алмазов и торговли бриллиантами?", dateItem: '14 октября 2011'},
         {id: 3, name: "Лилия Семеновна", comment: "Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?", dateItem: '14 октября 2011'}
       ],
+      myDate: new Date(),
       nextTodoId: 4
     }),
     methods: {
-      addNewTodo: function () {
-        this.items.push({
-          id: this.nextTodoId++,
-          comment: this.newTodoText
-        });
-        console.log(this.items);
-        this.newTodoText = '';
-        process.nextTick(() => {
-          this.$refs.box.innerText = '';
-        })
+      addNewTodo: function (e) {
+        if (!e.shiftKey) {
+          this.items.push({
+            id: this.nextTodoId++,
+            dateItem: this.myDate,
+            comment: this.newTodoText.trim()
+          });
+          this.newTodoText = '';
+          process.nextTick(() => {
+              this.$refs.box.innerText = '';
+          });
+        }
+
+
       }
     }
   }
