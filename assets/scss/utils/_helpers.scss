@@ -10,30 +10,41 @@ html {
   min-height: 100vh;
   font-size: 20px;
 
-    @include respond-to(tablet) {
-      font-size: 16px;
-    }
+ /*   @include respond-to(tablet) {
+      font-size: 20px;
+    }*/
 
     @include respond-to(phone) {
-      font-size: 14px;
+      font-size: 16px;
     }
 }
 
 body {
+    background: $bacBody;
     color: $colorBody;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-img {
-    height: auto;
+.wrapper {
+  padding: 20px;
+  min-height: 100vh;
+
+     /* @include respond-to(phone) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+      }*/
 }
 
 .container {
     width: $wide;
     margin: 0 auto;
-    padding: 20px;
 
     @include respond-to(tablet) {
         width: $small;
@@ -79,7 +90,7 @@ button, a {
 
 }
 
-p, h2, h3, ul, h1, button, div, a, li {
+p, h2, h3, h4, h5, ul, h1, button, div, a, li {
     margin: 0;
     padding:0;
 }
@@ -93,35 +104,16 @@ h1, h2, h3 {
 }
 
 b, strong {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .title {
-  font-size: 2.4rem;
+  font-size: .65rem;
   text-transform: initial;
-  line-height: 72px;
-  font-weight: 600;
-
-    @media only screen and (max-width: 1440px) {
-      font-size: 40px;
-    }
+  line-height: .75rem;
+  font-weight: normal;
 
     @include respond-to(phone) {
-        font-size: 24px;
-        line-height: 36px;
-    }
-
-    &--sub {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.6rem;
-      line-height: 40px;
-      margin: 0 0 1.2rem;
-
-      @include respond-to(phone) {
-        font-size: 20px;
-        line-height: 25px;
-      }
     }
 }
 
@@ -176,18 +168,10 @@ select, input, textarea {
     text-align: center;
 }
 
-.wrapper {
-  min-height: 100vh;
-  flex-direction: column;
-  display: flex;
+.bg-green {
+  background: $green;
+}
 
-    @include respond-to(phone) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-      height: 100%;
-      width: 100%;
-    }
+.bg-blue-light {
+  background: $blue-light;
 }

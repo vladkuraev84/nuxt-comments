@@ -5,3 +5,12 @@
 @import "scss/utils/fonts";
 @import "scss/utils/button";
 @import "scss/utils/input";
+
+//Blocks
+@import "scss/blocks/user";
+@import "scss/blocks/services";
+@import "scss/blocks/comments";
+
+.text-right {
+  text-align: right;
+}

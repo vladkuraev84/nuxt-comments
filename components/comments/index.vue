@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="comments-wrapper">
+    <div class="comments">
       <div class="comments__header">
         <div class="comments__info">
           <p><b>Последние отзывы</b></p>
@@ -13,11 +13,11 @@
           </ul>
         </div>
       </div>
-      <div class="comments">
-        <ul class="comments__list">
+      <div class="comments__list">
+        <ul>
           <Item
             v-for="item in items"
-            :key="item.id"
+            :key="item"
             :item="item"
           />
         </ul>
@@ -26,8 +26,8 @@
       <form @submit.prevent="addNewTodo">
         <label>Добавить задачу</label>
         <!--<input
-          v-model="newTodoText"
-          placeholder="Например, покормить кота"
+          v-model.trim="newTodoText"
+          placeholder="Например"
         >-->
         <div
           contenteditable
@@ -53,9 +53,9 @@
       countLike: 131,
       countSms: 14,
       items: [
-        {id: 1, name: "Vlad", comment: "Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?"},
-        {id: 2, name: "Serg", comment: "Lorem ipsum2"},
-        {id: 3, name: "Yana", comment: "Lorem ipsum3"}
+        {id: 1, name: "Vlad", comment: "Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?", dateItem: '13 октября 2011'},
+        {id: 2, name: "Serg", comment: "Lorem ipsum2", dateItem: '14 октября 2011'},
+        {id: 3, name: "Yana", comment: "Lorem ipsum3", dateItem: '1580558031264'}
       ],
       nextTodoId: 4
     }),

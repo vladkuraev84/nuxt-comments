@@ -1,0 +1,61 @@
+.services {
+  margin-top: .6rem;
+
+    &__list {
+      border-left: 1px solid rgba(51, 51, 51, 0.2);
+
+      &-wr {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        border-top: 1px solid $gray-light;
+        border-bottom: 1px solid $gray-light;
+      }
+
+      li {
+        + li {
+          margin-top: 2px;
+        }
+      }
+    }
+
+  &__item {
+    @include flex(space-between, center);
+
+      &__inner {
+        position: relative;
+        flex: 1;
+        padding: 6px;
+
+          p {
+            font-size: .65rem;
+            z-index: 1;
+            position: relative;
+          }
+      }
+  }
+
+  &__total {
+    @include flex();
+    margin-top: 9px;
+
+      span {
+        font-size: .8rem;
+        line-height: 1.3rem;
+      }
+  }
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.number {
+  font-size: .65rem;
+  padding: 0 0 0 12px;
+}
