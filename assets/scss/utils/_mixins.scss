@@ -3,6 +3,14 @@
         @media only screen and (max-width: $small) {
             @content;
         }
+    } @else if $media == telephone {
+        @media only screen and (max-width: $telephone) {
+            @content;
+        }
+    }  @else if $media == tablet-small {
+        @media only screen and (max-width: $small__) {
+            @content;
+        }
     } @else if $media == tablet {
         @media only screen and (max-width: $wide) {
             @content;

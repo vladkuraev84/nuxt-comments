@@ -1,5 +1,6 @@
 .user {
   margin-bottom: 1rem;
+  padding: 20px 20px 0;
 
     .container {
       @include flex(flex-start, flex-start, row, nowrap);
@@ -13,6 +14,12 @@
       margin-right: 10px;
       margin-bottom: 2px;
       flex: none;
+      transition: .25s all;
+
+        @include respond-to(telephone) {
+          width: 4rem;
+          height: 4rem;
+        }
 
         img {
           width: 100%;
@@ -20,7 +27,7 @@
     }
 
     &__info {
-      flex: 1 0 auto;
+      flex: 1 0 0;
     }
 
     &__name {
@@ -57,6 +64,13 @@
         border: 1px solid $gray-light;
         border-radius: 5px 5px 5px 2rem;
         z-index: -1;
+
+        transition: .25s all;
+
+        @include respond-to(telephone) {
+          width: calc(100% + 10px + 4rem/2);
+          left: calc(-10px - 4rem/2);
+        }
       }
 
 
